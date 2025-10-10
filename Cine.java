@@ -1,16 +1,15 @@
 import java.util.*;
 
 public class Cine {
-    // Parámetros de la sala
     static final int FILAS = 4;
     static final int COLUMNAS = 6;
     static final String[] LETRAS = {"A", "B", "C", "D"};
     static String[][] asientos = new String[FILAS][COLUMNAS];
 
-    // Mapeo comprador a asientos comprados
+    // 2. se realiza:Mapeo comprador a asientos comprados
     static Map<String, List<String>> compradores = new LinkedHashMap<>();
 
-    // Costo fijo por ejemplo, podrías agregar lógica para precios diferentes
+    // OBtencion del Costo fijo 
     static final int PRECIO_ASIENTO = 10000;
 
     static Scanner scanner = new Scanner(System.in);
@@ -38,7 +37,7 @@ public class Cine {
         }
     }
 
-    // Inicializar los asientos con formato por defecto (e.g., A1, B2)
+    // Inicializar los asientos 
     static void inicializarAsientos() {
         for (int i = 0; i < FILAS; i++)
             for (int j = 0; j < COLUMNAS; j++)
@@ -54,7 +53,7 @@ public class Cine {
             return;
         }
 
-        // Si el usuario ya existe, recupera sus asientos; si no, crea nueva entrada
+        // Si el usuario ya existe, recupera sus asientos; si no, crea nueva entradaaa
         List<String> misAsientos = compradores.getOrDefault(nombre, new ArrayList<>());
         int total = 0;
 
@@ -87,7 +86,7 @@ public class Cine {
         }
     }
 
-    // Mostrar asientos en formato visual
+    // Mostrar asientos de manera visual
     static void mostrarAsientos() {
         System.out.println("\nEstado de la sala (XX = ocupado):");
         for (int i = 0; i < FILAS; i++) {
